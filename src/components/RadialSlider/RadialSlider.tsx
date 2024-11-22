@@ -228,5 +228,4 @@ const RadialSlider = (props: RadialSliderProps & typeof defaultProps) => {
   );
 };
 
-RadialSlider.defaultProps = defaultProps;
 export default RadialSlider;

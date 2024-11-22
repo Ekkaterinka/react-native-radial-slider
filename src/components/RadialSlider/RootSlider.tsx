@@ -4,9 +4,12 @@ import RadialSlider from './RadialSlider';
 import SpeedoMeter from './SpeedoMeter';
 import type { RootSliderProps, SpeedoMeterProps } from './types';
 import type { defaultSpeedoMeterProps } from './SpeedometerDefaultProps';
+import { defaultProps } from './SliderDefaultProps';
 
 const RootSlider = (props: RootSliderProps) => {
   const { variant } = props;
+
+  const transmittedProps = {...defaultProps, ...props}
 
   return variant === Constants.speedoMeterMarker ||
     variant === Constants.speedometer ? (
@@ -16,7 +19,7 @@ const RootSlider = (props: RootSliderProps) => {
         typeof defaultSpeedoMeterProps as object)}
     />
   ) : (
-    <RadialSlider {...props} />
+    <RadialSlider {...transmittedProps} />
   );
 };
 
